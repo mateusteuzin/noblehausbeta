@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NobleHaus — Imóveis de Alto Padrão em Fortaleza</title>
+  <meta name="description" content="NobleHaus — Imobiliária de luxo em Fortaleza. Imóveis exclusivos, atendimento sob medida e curadoria precisa para quem busca viver e investir com excelência." />
+  <meta name="author" content="NobleHaus" />
+  <meta name="theme-color" content="#0D1B2A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="NobleHaus — Imóveis de Alto Padrão" />
+  <meta property="og:description" content="Imóveis únicos, localizações privilegiadas e atendimento sob medida." />
+  <meta property="og:image" content="assets/hero.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" href="assets/logo 2.0.png" />
+  <link rel="canonical" href="/" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "NobleHaus",
+    "description": "Imóveis de alto padrão em Fortaleza",
+    "telephone": "+55-85-99999-9999",
+    "email": "contato@noblehaus.com.br",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Dom Luís, 1233 - Sala 501",
+      "addressLocality": "Fortaleza",
+      "addressRegion": "CE",
+      "postalCode": "60160-230",
+      "addressCountry": "BR"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <img src="assets/logo 2.0.png" alt="NobleHaus" />
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <img src="assets/logo 2.0.png" alt="NobleHaus logo" />
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#inicio">Início</a>
+        <a href="#imoveis">Imóveis</a>
+        <a href="#sobre">Sobre Nós</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#localizacoes">Localizações</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <a href="#contato" class="btn btn-primary btn-sm">Agendar visita</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+<section class="hero" id="inicio">
+    <div class="hero-bg" style="background-image: url('assets/casa-front.png')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <div class="hero-content reveal" data-anim="fade-right">
+        <span class="eyebrow">Imóveis de alto padrão</span>
+        <h1 class="hero-title">
+          O padrão que define <span class="gold-italic">exclusividade.</span>
+        </h1>
+        <div class="divider"></div>
+        <p class="hero-sub">
+          Imóveis únicos, localizações privilegiadas e um atendimento feito sob
+          medida para quem busca viver ou investir com excelência.
+        </p>
+        <div class="hero-actions">
+          <a href="#imoveis" class="btn btn-primary">Explorar imóveis</a>
+          <a href="#contato" class="btn btn-outline">Falar com especialista</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Stats -->
+  <div class="stats-container">
+    <div class="stats-bar reveal" data-anim="fade-up">
+      <div class="stat"><span class="stat-num" data-count="350" data-prefix="+">+0</span><span class="stat-label">Imóveis exclusivos</span></div>
+      <div class="stat"><span class="stat-num" data-count="12" data-suffix="+">0+</span><span class="stat-label">Anos de mercado</span></div>
+      <div class="stat"><span class="stat-num" data-count="1.2" data-prefix="+" data-suffix="B" data-decimals="1">+0B</span><span class="stat-label">em VGV gerenciado</span></div>
+      <div class="stat"><span class="stat-num" data-count="98" data-suffix="%">0%</span><span class="stat-label">Clientes satisfeitos</span></div>
+    </div>
+  </div>
+  <!-- Diferenciais -->
+  <section class="section">
+    <div class="container two-col">
+      <div class="reveal" data-anim="fade-right">
+        <span class="eyebrow">Nossos diferenciais</span>
+        <h2>Excelência em cada detalhe, em <span class="gold-italic">cada escolha.</span></h2>
+        <div class="divider"></div>
+        <p class="muted">Unimos localização privilegiada, arquitetura exclusiva e atendimento personalizado para oferecer uma experiência imobiliária única.</p>
+        <div class="feature-grid">
+          <div class="feature tilt"><div class="feat-icon">◆</div><h4>Imóveis Exclusivos</h4><p>Selecionamos apenas imóveis de alto padrão, com localização e valor excepcionais.</p></div>
+          <div class="feature tilt"><div class="feat-icon">✓</div><h4>Segurança e Confiança</h4><p>Transparência em cada negociação, com total segurança jurídica.</p></div>
+          <div class="feature tilt"><div class="feat-icon">★</div><h4>Atendimento Premium</h4><p>Consultores especialistas dedicados para entender suas reais necessidades.</p></div>
+          <div class="feature tilt"><div class="feat-icon">◇</div><h4>Experiência Completa</h4><p>Do primeiro contato à entrega das chaves, cuidamos de toda a jornada.</p></div>
+        </div>
+      </div>
+      <div class="tour-card reveal" data-anim="fade-left" id="openTour">
+        <video class="tour-video" controls playsinline preload="auto">
+          <source src="assets/apartamento-luxo.mp4" type="video/mp4" />
+        </video>
+        <div class="tour-overlay">
+          <button class="play-btn" aria-label="Assistir tour 3D"><span>▶</span></button>
+          <span class="tour-label">ASSISTA AO TOUR 3D</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Imóveis em destaque -->
+  <section class="section section-soft" id="imoveis">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Imóveis em destaque</span>
+          <h2>Selecionados para um <span class="gold-italic">estilo de vida único.</span></h2>
+          <div class="divider"></div>
+        </div>
+        <p class="muted max-w">Imóveis que unem arquitetura, localização e sofisticação em cada detalhe.</p>
+      </div>
+      <div class="properties">
+        <article class="property reveal" data-anim="fade-up">
+          <div class="prop-img"><img src="assets/aphaville.png" alt="Casa Alphaville Fortaleza" loading="lazy" /><span class="badge">Destaque</span><button class="fav" aria-label="Favoritar">♡</button></div>
+          <div class="prop-body">
+            <h3>Casa Alphaville Fortaleza</h3>
+            <p class="loc">Alphaville Fortaleza, CE</p>
+            <p class="price">R$ 8.750.000</p>
+            <ul class="specs"><li>560m²</li><li>5 Suítes</li><li>6 Vagas</li></ul>
+<button class="btn btn-outline view-details" data-property="alphaville">Ver detalhes</button>
+          </div>
+        </article>
+        <article class="property reveal" data-anim="fade-up" data-delay="100">
+          <div class="prop-img"><img src="assets/apartamentomeireles.png" alt="Apartamento Meireles" loading="lazy" /><button class="fav" aria-label="Favoritar">♡</button></div>
+          <div class="prop-body">
+            <h3>Apartamento Meireles</h3>
+            <p class="loc">Meireles, Fortaleza - CE</p>
+            <p class="price">R$ 4.980.000</p>
+            <ul class="specs"><li>280m²</li><li>4 Suítes</li><li>4 Vagas</li></ul>
+<button class="btn btn-outline view-details" data-property="meireles">Ver detalhes</button>
+          </div>
+        </article>
+        <article class="property reveal" data-anim="fade-up" data-delay="200">
+          <div class="prop-img"><img src="assets/praiadunas.png" alt="Mansão no Porto das Dunas" loading="lazy" /><button class="fav" aria-label="Favoritar">♡</button></div>
+          <div class="prop-body">
+            <h3>Mansão no Porto das Dunas</h3>
+            <p class="loc">Porto das Dunas, Aquiraz - CE</p>
+            <p class="price">R$ 12.900.000</p>
+            <ul class="specs"><li>780m²</li><li>6 Suítes</li><li>8 Vagas</li></ul>
+<button class="btn btn-outline view-details" data-property="porto">Ver detalhes</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Localizações / Mapa -->
+  <section class="section" id="localizacoes">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Atuamos nos melhores endereços</span>
+        <h2>Encontre o imóvel ideal na <span class="gold-italic">localização perfeita.</span></h2>
+        <div class="divider center"></div>
+      </div>
+      <div class="map-wrap reveal" data-anim="fade-up">
+        <div id="map" class="map"></div>
+        <aside class="map-side">
+          <h4>Bairros premium</h4>
+          <ul class="hood-list" id="hoodList"></ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Serviços -->
+  <section class="section section-soft" id="servicos">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Serviços</span>
+        <h2>Soluções completas para <span class="gold-italic">quem exige o melhor.</span></h2>
+        <div class="divider center"></div>
+      </div>
+      <div class="services">
+        <div class="service reveal" data-anim="fade-up"><div class="feat-icon">⌂</div><h4>Venda de Imóveis</h4><p>Estratégia personalizada para valorizar seu patrimônio.</p></div>
+        <div class="service reveal" data-anim="fade-up" data-delay="80"><div class="feat-icon">◈</div><h4>Compra de Imóveis</h4><p>Curadoria precisa entre as melhores opções do mercado.</p></div>
+        <div class="service reveal" data-anim="fade-up" data-delay="160"><div class="feat-icon">⎈</div><h4>Aluguel Premium</h4><p>Locações de alto padrão para residir ou investir.</p></div>
+        <div class="service reveal" data-anim="fade-up" data-delay="240"><div class="feat-icon">⚖</div><h4>Avaliação de Imóveis</h4><p>Avaliações técnicas com base em dados reais de mercado.</p></div>
+        <div class="service reveal" data-anim="fade-up" data-delay="320"><div class="feat-icon">✦</div><h4>Consultoria Personalizada</h4><p>Atendimento consultivo dedicado a cada cliente.</p></div>
+        <div class="service reveal" data-anim="fade-up" data-delay="400"><div class="feat-icon">▲</div><h4>Investimento Seguro</h4><p>Imóveis com alto potencial de valorização.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section class="section" id="sobre">
+    <div class="container two-col align-center">
+      <div class="reveal" data-anim="fade-right">
+        <span class="eyebrow">Sobre a NobleHaus</span>
+        <h2>Mais que um endereço, um <span class="gold-italic">estilo de vida.</span></h2>
+        <div class="divider"></div>
+        <p class="muted">A NobleHaus nasceu para transformar a experiência imobiliária em algo mais exclusivo, seguro e sofisticado. Atuamos com imóveis de alto padrão, atendimento consultivo e curadoria precisa para clientes que buscam mais do que um endereço: buscam estilo de vida, patrimônio e confiança.</p>
+        <a href="#contato" class="btn btn-primary">Conheça nossa história</a>
+      </div>
+      <div class="about-img reveal" data-anim="fade-left">
+        <img src="assets/about.jpg" alt="Ilustração arquitetônica de mansão" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" id="contato">
+    <div class="container">
+      <div class="cta reveal" data-anim="fade-up">
+        <div class="cta-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="17" rx="3" stroke="currentColor" stroke-width="1.8" fill="rgba(212,175,55,0.08)" />
+            <path d="M7 2V6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+            <path d="M17 2V6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+            <path d="M6 11H18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+            <path d="M8 15H10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+            <path d="M14 15H16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+            <path d="M8 18H16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          </svg>
+        </div>
+        <div class="cta-text">
+          <h3>Pronto para encontrar seu próximo imóvel?</h3>
+          <p>Nossa equipe especializada está pronta para te atender com exclusividade.</p>
+        </div>
+        <a href="https://wa.me/5585999999999" class="btn btn-primary btn-lg">Agendar visita →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo 2.0.png" alt="NobleHaus" class="footer-logo" />
+        <p class="muted">Excelência, sofisticação e atendimento exclusivo para transformar o seu jeito de viver e investir.</p>
+        <div class="footer-divider"></div>
+        <div class="socials">
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h5>Navegação</h5>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#imoveis">Imóveis</a></li>
+          <li><a href="#sobre">Sobre Nós</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#contato">Blog</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Imóveis</h5>
+        <ul>
+          <li><a href="#imoveis">Imóveis em Destaque</a></li>
+          <li><a href="#imoveis">Lançamentos</a></li>
+          <li><a href="#imoveis">Casas</a></li>
+          <li><a href="#imoveis">Apartamentos</a></li>
+          <li><a href="#imoveis">Coberturas</a></li>
+          <li><a href="#imoveis">Imóveis Comerciais</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Serviços</h5>
+        <ul>
+          <li><a href="#servicos">Venda de Imóveis</a></li>
+          <li><a href="#servicos">Compra de Imóveis</a></li>
+          <li><a href="#servicos">Aluguel</a></li>
+          <li><a href="#servicos">Avaliação de Imóveis</a></li>
+          <li><a href="#servicos">Consultoria Personalizada</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Fale Conosco</h5>
+        <ul class="contact-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.83a16 16 0 0 0 6.26 6.26l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>(85) 99999-9999</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span>(85) 99999-9999</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>contato@noblehaus.com.br</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Av. Dom Luís, 1233 - Sala 501<br>Meireles, Fortaleza - CE, 60160-230</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="container newsletter">
+      <div>
+        <h5>Receba novidades exclusivas</h5>
+        <p class="muted">Cadastre-se e receba os melhores imóveis diretamente no seu e-mail.</p>
+      </div>
+      <form onsubmit="event.preventDefault(); this.reset(); alert('Inscrição realizada!');">
+        <input type="email" placeholder="Seu melhor e-mail" required />
+        <button class="btn btn-dark">Enviar</button>
+      </form>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 NobleHaus. Todos os direitos reservados.</p>
+      <p>Desenvolvido por <span class="gold">BackFire</span></p>
+    </div>
+  </footer>
+
+  <!-- Property modal -->
+
+<div id="propertyModal" class="property-modal">
+    <div class="property-modal-bg" data-close="modal"></div>
+    <div class="property-modal-card">
+      <button class="modal-close property-close" id="closePropertyModal" aria-label="Fechar detalhes do imóvel">
+        <span></span><span></span>
+      </button>
+      <div class="property-modal-content">
+        <section class="detail-hero reveal" data-anim="fade-in">
+          <div class="detail-hero-sheen" aria-hidden="true"></div>
+          <div class="detail-hero-media" id="detailHeroMedia">
+            <img src="" alt="" id="detailHeroImage" />
+            <div class="detail-hero-overlay"></div>
+            <div class="detail-hero-logo"><span>Exclusivo</span></div>
+          </div>
+          <div class="detail-hero-copy">
+            <div class="detail-hero-badge" id="detailExclusiveBadge">Imóvel Exclusivo</div>
+            <span class="eyebrow">Imóvel Premium</span>
+            <h1 id="detailTitle"></h1>
+            <p class="detail-subtitle" id="detailLocation"></p>
+            <div class="detail-hero-divider" aria-hidden="true"></div>
+            <p class="detail-price" id="detailPrice"></p>
+            <div class="detail-hero-actions">
+              <a href="#contato" class="btn btn-primary btn-lg">Agendar visita</a>
+              <a href="https://wa.me/5585999999999" class="btn btn-outline btn-lg detail-whatsapp" target="_blank">WhatsApp</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="detail-gallery-section reveal" data-anim="fade-in">
+          <div class="section-head gallery-head">
+            <div>
+              <span class="eyebrow">Galeria Premium</span>
+              <h2>Explore cada ambiente com elegância</h2>
+            </div>
+          </div>
+          <div class="detail-gallery" id="detailGallery"></div>
+        </section>
+
+        <section class="detail-tour reveal" data-anim="fade-in">
+          <div>
+            <span class="eyebrow">Explore cada detalhe</span>
+            <h2>Tour 3D e vídeo imersivo</h2>
+            <p>Um convite visual para sentir a atmosfera e o acabamento de alto padrão.</p>
+          </div>
+          <button class="btn btn-primary btn-lg detail-tour-play" type="button">Assistir tour →</button>
+        </section>
+
+        <section class="detail-info reveal" data-anim="fade-in">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Detalhes do imóvel</span>
+              <h2>Características que refletem luxo</h2>
+            </div>
+          </div>
+          <div class="info-grid" id="detailInfoGrid"></div>
+        </section>
+
+        <section class="detail-description reveal" data-anim="fade-in">
+          <div class="detail-copy-block">
+            <span class="eyebrow">Arquitetura pensada para impressionar</span>
+            <h2>Cada ambiente foi cuidadosamente projetado para unir conforto, exclusividade e sofisticação.</h2>
+            <p>Design atemporal, acabamentos premium e soluções inteligentes para entregar uma residência verdadeiramente cinematográfica, com emoção em cada detalhe.</p>
+          </div>
+        </section>
+
+        <section class="detail-location-map reveal" data-anim="fade-in">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Localização privilegiada</span>
+              <h2>Um endereço estratégico para viver com exclusividade</h2>
+            </div>
+          </div>
+          <div class="map-detail-wrap">
+            <div id="detailMap" class="detail-map"></div>
+            <div class="detail-map-info" id="detailMapInfo"></div>
+          </div>
+        </section>
+
+        <section class="detail-final-cta reveal" data-anim="fade-in">
+          <div class="final-cta-card">
+            <div>
+              <h3>Agende uma visita exclusiva.</h3>
+              <p>Nossa equipe especializada está pronta para apresentar cada detalhe deste imóvel excepcional.</p>
+            </div>
+            <div class="final-cta-actions">
+              <a href="#contato" class="btn btn-primary btn-lg">Agendar visita</a>
+              <a href="https://wa.me/5585999999999" class="btn btn-outline btn-lg" target="_blank">Falar com especialista</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="galleryLightbox" aria-hidden="true">
+    <div class="lightbox-bg" data-close="lightbox"></div>
+    <div class="lightbox-card">
+      <button class="modal-close lightbox-close" id="closeLightbox" aria-label="Fechar galeria">
+        <span></span><span></span>
+      </button>
+      <img src="" alt="Imagem do imóvel" class="lightbox-image" id="lightboxImage" />
+      <div class="lightbox-nav">
+        <button class="lightbox-arrow" id="prevLightbox" aria-label="Imagem anterior">←</button>
+        <button class="lightbox-arrow" id="nextLightbox" aria-label="Próxima imagem">→</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tour modal -->
+  <div class="modal" id="tourModal">
+    <div class="modal-bg"></div>
+    <div class="modal-card">
+      <button class="modal-close" id="closeTour" aria-label="Fechar">×</button>
+      <div class="modal-video">
+        <video
+          id="tourVideo"
+          class="modal-tour-video"
+          controls
+          playsinline
+          preload="auto"
+poster="assets/casa-front.png"
+        >
+          <source src="assets/apartamento-luxo.mp4" type="video/mp4">
+          Seu navegador não suporta vídeo.
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <button class="back-top" id="backTop" aria-label="Voltar ao topo">↑</button>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
