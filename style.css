@@ -1931,6 +1931,12 @@ body.modal-open {
     gap: 18px;
     box-shadow: var(--shadow-md);
     border-radius: 18px;
+    z-index: 99999;
+  }
+
+  /* evita que o header fique “por cima” em páginas com scroll e modais */
+  body.modal-open .header {
+    pointer-events: none;
   }
 
   .nav.open {
