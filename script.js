@@ -151,6 +151,8 @@ document.addEventListener("DOMContentLoaded", function () {
   function esconderLoader() {
     if (!loader) return;
     loader.classList.add("hidden");
+    document.body.style.overflow = "auto";
+    document.documentElement.style.overflow = "auto";
     setTimeout(() => {
       loader.style.display = "none";
       const hero = $(".hero");
@@ -196,17 +198,20 @@ document.addEventListener("DOMContentLoaded", function () {
   if (menuToggle && mobileMenu) {
     menuToggle.addEventListener("click", function () {
       mobileMenu.classList.add("active");
+      document.body.style.overflow = "hidden";
     });
 
     if (closeMenu) {
       closeMenu.addEventListener("click", function () {
         mobileMenu.classList.remove("active");
+        document.body.style.overflow = "auto";
       });
     }
 
     $$("a", mobileMenu).forEach(function (link) {
       link.addEventListener("click", function () {
         mobileMenu.classList.remove("active");
+        document.body.style.overflow = "auto";
       });
     });
   }
