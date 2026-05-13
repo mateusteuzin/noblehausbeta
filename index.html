@@ -174,31 +174,22 @@
     .process-step h4{font-size:.75rem;text-transform:uppercase;letter-spacing:3px;color:#081321;margin-bottom:16px;font-weight:700}
     .process-step p{font-size:.85rem;color:rgba(8,19,33,.6);line-height:1.9}
 
-    .map-showcase{display:grid;grid-template-columns:380px 1fr;background:#081321;margin-top:64px;box-shadow:0 60px 120px rgba(0,0,0,0.2)}
-    .map-side{padding:60px;background:#050b14;border-right:1px solid rgba(255,255,255,.05)}
+    .about-section{display:grid;grid-template-columns:1fr 1.1fr;align-items:center;gap:70px;padding:110px 0}
+    .about-image{width:100%;height:620px;object-fit:cover;display:block}
+    @media(max-width:900px){
+      .about-section{grid-template-columns:1fr;gap:36px;padding:70px 0}
+      .about-image{height:360px}
+    }
+    
+    .map-wrap{display:grid;grid-template-columns:380px 1fr;min-height:560px;background:#07111c;border:1px solid rgba(212,175,55,.16);overflow:hidden;margin-top:64px}
+    .map-side{background:#07111c;color:#fff;padding:56px 44px;height:100%}
     .map-side h4{font-family:var(--serif);font-size:2.2rem;color:#fff;margin-bottom:32px;letter-spacing:-0.02em}
-    .hood-list li{padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.05);cursor:pointer;transition:.3s}
-    .hood-list li:hover{padding-left:10px}
-    .hood-name{display:block;font-weight:600;color:#fff;font-size:.9rem;letter-spacing:1px;text-transform:uppercase}
-    .hood-meta{display:block;color:var(--gold);font-size:.65rem;margin-top:6px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700}
-    .map-container{height:600px;position:relative}
-    .map{width:100%;height:100%}
-
-    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:64px}
-    .service{background:#fff;border:1px solid rgba(8,19,33,.06);padding:42px;box-shadow:0 14px 40px rgba(0,0,0,.04);transition:.6s cubic-bezier(.19,1,.22,1);position:relative;overflow:hidden}
-    .service:hover{transform:translateY(-8px);border-color:rgba(212,175,55,.3);box-shadow:0 30px 70px rgba(212,175,55,.12)}
-    .service::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:.6s cubic-bezier(.19,1,.22,1)}
-    .service:hover::before{transform:scaleX(1)}
-
-    .about-editorial{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:0;align-items:stretch;padding:0;background:#f7f3ea;overflow:hidden;min-height:700px}
-    .about-content-wrap{display:flex;align-items:center;justify-content:flex-end;padding:120px 80px 120px 0}
-    .about-content{max-width:540px;position:relative;z-index:2}
-    .about-content h2{font-size:clamp(2.5rem,5vw,4rem);margin-bottom:32px;line-height:1;letter-spacing:-.03em}
-    .about-manifesto{font-size:1.15rem;line-height:1.9;color:rgba(8,19,33,.7);margin-bottom:42px;border-left:2px solid var(--gold);padding-left:32px}
-    .about-image-wrap{width:100%;height:100%;position:relative}
-    .about-image-wrap img{width:100%;height:100%;object-fit:cover}
-    .about-link{display:inline-flex;align-items:center;gap:12px;color:#081321;text-transform:uppercase;font-size:.7rem;font-weight:800;letter-spacing:2px;text-decoration:none;transition:.3s}
-    .about-link:hover{color:var(--gold);gap:18px}
+    .map{width:100%;height:560px;min-height:560px}
+    .leaflet-container{width:100% !important;height:100% !important;background:#050b14 !important}
+    @media(max-width:900px){
+      .map-wrap{grid-template-columns:1fr}
+      .map{height:420px;min-height:420px}
+    }
     
     .services-showcase{position:relative;width:100%;height:460px;overflow:hidden;margin:42px 0 64px;border:1px solid rgba(8,19,33,0.05)}
     .services-showcase img{width:100%;height:100%;object-fit:cover;transition:transform 2s ease}
@@ -934,23 +925,21 @@
     </div>
   </section>
 
-  <section class="section" id="localizacoes" style="padding-bottom:0">
+  <section class="section section-soft" id="localizacoes">
     <div class="container">
-      <div class="section-head reveal" data-anim="fade-right">
+      <div class="section-head reveal">
         <div>
-          <span class="eyebrow">Onde o Luxo Reside</span>
+          <span class="eyebrow">Onde o luxo reside</span>
           <h2>Bairros selecionados pela <span class="gold-italic">exclusividade.</span></h2>
         </div>
       </div>
-
-      <div class="map-showcase reveal" data-anim="fade-up">
-        <aside class="map-side">
+      
+      <div class="map-wrap reveal">
+        <div class="map-side">
           <h4 data-i18n="map_title">Endereços de Prestígio</h4>
           <ul class="hood-list" id="hoodList"></ul>
-        </aside>
-        <div class="map-container">
-          <div id="map" class="map"></div>
         </div>
+        <div id="map" class="map"></div>
       </div>
     </div>
   </section>
@@ -975,25 +964,27 @@
       <div class="services">
         <div class="service reveal" data-anim="fade-up">
           <div class="feat-icon">⚜</div>
-          <h4 data-i18n="feat_curadoria_h4">Venda de Imóveis</h4>
-          <p>Posicionamento premium, apresentação estratégica e negociação profissional.</p>
+          <h4 data-i18n="feat_curadoria_h4">Curadoria Privada</h4>
+          <p data-i18n="feat_curadoria_p">Selecionamos imóveis que atendem rigorosos critérios de qualidade e exclusividade.</p>
         </div>
 
-        <div class="service reveal" data-anim="fade-up" data-delay="80">
+        <div class="service reveal" data-anim="fade-up" data-delay="100">
           <div class="feat-icon">◈</div>
-          <h4 data-i18n="feat_juridica_h4">Compra de Imóveis</h4>
-          <p>Curadoria precisa entre as melhores oportunidades disponíveis e reservadas.</p>
-          <div class="service reveal" data-anim="fade-up" data-delay="160">
+          <h4 data-i18n="feat_juridica_h4">Segurança Jurídica</h4>
+          <p data-i18n="feat_juridica_p">Acompanhamento completo para garantir transações seguras e transparentes.</p>
+        </div>
+
+        <div class="service reveal" data-anim="fade-up" data-delay="200">
           <div class="feat-icon">⎈</div>
-          <h4 data-i18n="feat_posvenda_h4">Consultoria Jurídica</h4>
-          <p>Análise técnica com base em mercado, liquidez, localização e acabamento.</p>
+          <h4 data-i18n="feat_posvenda_h4">Pós-venda Premium</h4>
+          <p data-i18n="feat_posvenda_p">Suporte contínuo após a aquisição para uma transição perfeita.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section about-editorial" id="sobre">
-    <div class="about-content-wrap">
+  <section class="container" id="sobre">
+    <div class="about-section">
       <div class="about-content reveal" data-anim="fade-right">
         <span class="eyebrow">O Manifesto NobleHaus</span>
         <h2 data-i18n="nav_estilo">Mais que um endereço, um <span class="gold-italic">estilo de vida.</span></h2>
@@ -1002,9 +993,10 @@
         </div>
         <a href="https://wa.me/5585999999999" target="_blank" class="btn btn-primary" data-i18n="btn_especialista">Falar com especialista</a>
       </div>
-    </div>
-    <div class="about-image-wrap reveal" data-anim="fade-left">
-      <img src="assets/sobre.png" alt="NobleHaus Experience" />
+      
+      <div class="reveal" data-anim="fade-left">
+        <img src="assets/SOBRE.png" alt="NobleHaus Experience" class="about-image">
+      </div>
     </div>
   </section>
 
