@@ -147,43 +147,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Hero Activation
   const hero = $(".hero");
-  if (hero) {
+  // Loader handling
+  function esconderLoader() {
+    if (!loader) return;
+    loader.classList.add("hidden");
     setTimeout(() => {
-      hero.classList.add("in");
-    }, 100);
+      loader.style.display = "none";
+      const hero = $(".hero");
+      if (hero) hero.classList.add("in");
+    }, 600);
   }
 
-  // Reveal Observer
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("in");
-      }
-    });
-  }, { threshold: 0.15 });
+  window.addEventListener("load", esconderLoader);
+  setTimeout(esconderLoader, 2000);
 
-  $$(".reveal").forEach(el => revealObserver.observe(el));
-
+  // Language Switcher
   langLinks.forEach(link => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
       const lang = link.getAttribute("data-lang");
       updateLanguage(lang);
+      langLinks.forEach(l => l.classList.remove("active"));
+      link.classList.add("active");
     });
   });
 
   // Load saved language
   const savedLang = localStorage.getItem("noblehaus_lang") || "pt";
   updateLanguage(savedLang);
-
-  function esconderLoader() {
-    if (!loader) return;
-    loader.classList.add("hidden");
-    loader.style.display = "none";
-  }
-
-  window.addEventListener("load", esconderLoader);
-  setTimeout(esconderLoader, 1200);
 
   function handleScroll() {
     if (header) header.classList.toggle("scrolled", window.scrollY > 30);
