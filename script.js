@@ -400,19 +400,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function iniciarMapa() {
     const mapEl = $("#map");
+    const hoodList = $("#hoodList");
     if (!mapEl || !window.L) return;
+
     const map = L.map("map", { scrollWheelZoom: false }).setView([-3.78, -38.48], 11);
     L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png").addTo(map);
+
+    const icon = L.divIcon({ className: "gold-pin", html: '<div class="gold-pin-dot"></div>', iconSize: [18, 18], iconAnchor: [9, 9] });
+
     const bairros = [
-      { name: "Meireles", coords: [-3.7280, -38.4970] },
-      { name: "Aldeota", coords: [-3.7400, -38.5050] },
-      { name: "Cocó", coords: [-3.7530, -38.4830] },
-      { name: "Guararapes", coords: [-3.7560, -38.4920] },
-      { name: "Alphaville Fortaleza", coords: [-3.8260, -38.4640] },
-      { name: "Porto das Dunas", coords: [-3.8330, -38.3950] }
+      { name: "Meireles", coords: [-3.7280, -38.4970], meta: "O m² mais valorizado" },
+      { name: "Aldeota", coords: [-3.7400, -38.5050], meta: "O coração comercial e residencial" },
+      { name: "Cocó", coords: [-3.7530, -38.4830], meta: "Natureza e sofisticação" },
+      { name: "Guararapes", coords: [-3.7560, -38.4920], meta: "Exclusividade e amplitude" },
+      { name: "Alphaville", coords: [-3.8260, -38.4640], meta: "Segurança e alto padrão" },
+      { name: "Porto das Dunas", coords: [-3.8330, -38.3950], meta: "Refúgio à beira-mar" }
     ];
+
+    if (hoodList) hoodList.innerHTML = "";
+
     bairros.forEach(b => {
-      L.marker(b.coords, { icon: L.divIcon({ className: "gold-pin", html: '<div class="gold-pin-dot"></div>', iconSize: [18, 18] }) }).addTo(map);
+      const marker = L.marker(b.coords, { icon: icon }).addTo(map).bindPopup(`<strong>${b.name}</strong>`);
+      
+      if (hoodList) {
+        const li = document.createElement("li");
+        li.innerHTML = `<span class="hood-name">${b.name}</span><span class="hood-meta">${b.meta}</span>`;
+        li.addEventListener("click", () => {
+          map.flyTo(b.coords, 14, { duration: 1.5 });
+          setTimeout(() => marker.openPopup(), 1600);
+        });
+        hoodList.appendChild(li);
+      }
     });
   }
 
