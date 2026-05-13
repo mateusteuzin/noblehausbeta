@@ -199,16 +199,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  if (menuToggle && nav) {
+  const mobileMenu = $("#mobileMenu");
+  const closeMenu = $("#closeMenu");
+
+  if (menuToggle && mobileMenu) {
     menuToggle.addEventListener("click", function () {
-      nav.classList.toggle("open");
-      menuToggle.classList.toggle("active");
+      mobileMenu.classList.add("active");
     });
 
-    $$("a", nav).forEach(function (link) {
+    if (closeMenu) {
+      closeMenu.addEventListener("click", function () {
+        mobileMenu.classList.remove("active");
+      });
+    }
+
+    $$("a", mobileMenu).forEach(function (link) {
       link.addEventListener("click", function () {
-        nav.classList.remove("open");
-        menuToggle.classList.remove("active");
+        mobileMenu.classList.remove("active");
       });
     });
   }
